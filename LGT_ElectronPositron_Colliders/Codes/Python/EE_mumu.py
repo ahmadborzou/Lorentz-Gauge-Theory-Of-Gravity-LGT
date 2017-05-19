@@ -62,7 +62,6 @@ def ParticleLength(r):
 theta = np.atleast_2d(np.linspace(0, np.pi, 1000)).T
 
 
-# plot asymmetry in # events between left and right hemisphere
 #set luminosity in fb^-1
 Lumin=2.#/fb
 Ecm=50.#GeV
