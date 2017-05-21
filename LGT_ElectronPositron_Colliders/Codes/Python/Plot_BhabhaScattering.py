@@ -68,7 +68,7 @@ for ir in range(0,np.size(r)):
     plt.xlabel(r'$\cos(\theta)$',fontsize=15)
     plt.ylabel(r'$\frac{d\sigma}{d\Omega}(\mathrm{nb})$',fontsize=20)
     plt.text(0.1, 50, r'$\sqrt{s} = 50$ GeV', fontsize=10)
-    plt.text(0.1, 20, r'Lum.$= 2$ fb$^{-1}$', fontsize=10)
+    #plt.text(0.1, 20, r'Lum.$= 2$ fb$^{-1}$', fontsize=10)
 
 
 plt.legend(loc='best',fontsize = 'large',shadow=True,fancybox=True)
