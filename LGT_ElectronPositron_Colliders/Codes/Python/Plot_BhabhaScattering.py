@@ -30,8 +30,8 @@ def TotalXS(theta,Ecm,r):
     a=1/137.04 # QED coupling
     return 0.39e6*a**2/(4.*Ecm**2)*(
                   2.*( (1.+np.cos(theta/2.)**4)/(np.sin(theta/2.)**4) + (1.+np.cos(theta)**2)/2. - 2.*(np.cos(theta/2.)**4)/(np.sin(theta/2.)**2)  )
-                  -3.*r**2/64.*np.sin(theta)**8/np.sin(theta/2.)**12
-                  +18.*r**4*np.cos(theta/2.)**4/(np.tan(theta/2.)**4)
+                  +3.*r**2*(5.+2.*np.cos(theta)+np.cos(2*theta))/np.sin(theta/2.)**2
+                  +9./64.*r**4*(7.+np.cos(2.*theta))**2/np.sin(theta/2.)**4
                  )
 
 

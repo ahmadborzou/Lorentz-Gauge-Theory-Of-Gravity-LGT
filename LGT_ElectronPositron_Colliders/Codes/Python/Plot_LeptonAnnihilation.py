@@ -31,7 +31,7 @@ def TotalXS(theta,Ecm,r):
     #0.39e12 is to return in fb
     a=1/137.04 # QED alpha. This cross section has nothing to do with QED. We only define g=r*e where e is the unit electric charge
     return 0.39e12*r**4*a**2/(16.*Ecm**2)*(
-                   (22.*(1+np.sin(2.*theta))-10.*np.cos(2.*theta)-4.*np.cos(4.*theta)-3.*np.sin(4.*theta))/(np.sin(theta)**2)
+                   (18.*(1+np.sin(2.*theta))-5.*np.cos(2.*theta)-4.*np.cos(4.*theta)-np.cos(6.*theta)+np.sin(4.*theta))/(4.*np.sin(theta)**2)
                  )
 
 # number of events:
@@ -85,6 +85,7 @@ plt.text(1.5e-4, 1e-4, r'Lum.$= 2$ fb$^{-1}$', fontsize=10)
 
 x1=fig3.add_subplot(111)
 x2 = x1.twiny()
+
 x2.set_xscale('log')
 x2.set_xlim(x1.get_xlim())
 
@@ -102,7 +103,7 @@ x2.set_xticklabels(UpXValue)
 
 x2.set_xlabel(r'$\frac{\delta}{l_{\mathrm{Pl}}}$',fontsize=20,labelpad=15)
 
-plt.ylim(1e-11, 1e-2)
+plt.ylim(1e-13, 1e-2)
 plt.plot()
 plt.tight_layout()
 plt.show()

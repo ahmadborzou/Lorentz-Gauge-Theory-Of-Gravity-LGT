@@ -22,7 +22,7 @@ from matplotlib import pyplot as plt
 
 # angular part of LGT Cross Section
 def LGTXS(theta):
-    return np.cos(theta/2)**4
+    return np.cos(theta)
 
 # angular part of QED Cross Section
 def QEDXS(theta):
@@ -37,9 +37,8 @@ def TotalXS(theta,Ecm,r):
     #Ecm is center of mass energy in GeV
     #0.39e12 is to return in fb
     a=1/137.04 # alpha in QED
-    b=a*r*np.sqrt(12.-18.*r**2) # beta defined in the paper
     return 0.39e12/(4*Ecm**2)*(
-                   a**2*QEDXS(theta)-b**2*LGTXS(theta)
+                   (1.+9./16.*r**4)*a**2*QEDXS(theta)-3.*r**2*a**2*LGTXS(theta)
                  )
 # Asymmetry in number of events in Left-Right hemispheres of detector
 def LREventAsym(Ecm,r,Lumin):
@@ -104,7 +103,7 @@ x2.set_xticklabels(UpXValue)
 
 x2.set_xlabel(r'$\frac{\delta}{l_{\mathrm{Pl}}}$',fontsize=20)
 
-
+plt.ylim(1e-4,1e3)
 plt.plot()
 plt.tight_layout()
 plt.show()
